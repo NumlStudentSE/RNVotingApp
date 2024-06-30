@@ -2,10 +2,14 @@
   "expo": {
     "name": "RNVotingApp",
     "slug": "RNVotingApp",
+    "extra": {
+      "EXPO_PUBLIC_SUPABASE_URL": "your-supabase-url",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY": "your-supabase-anon-key"
+    },
+    "scheme": "RNVotingApp", 
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",

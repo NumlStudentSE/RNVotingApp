@@ -4,6 +4,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import AuthProvider from '../providers/AuthProvider';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -27,11 +28,15 @@ export default function RootLayout() {
   }
 
   return (
+    //now stack is the children property of Auth Provider
+    //this means that all the screens and nested screens inside the Stack have access to the Auth Context Provider, which means to the information of user
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <AuthProvider>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ title: 'Login' }} />
         <Stack.Screen name="+not-found" />
       </Stack>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
